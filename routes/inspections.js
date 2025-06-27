@@ -1,7 +1,11 @@
 const express = require("express");
 const router = express.Router();
 const jwt = require("jsonwebtoken");
-const { getAssignedSchools, submitInspection } = require("../controllers/inspectionController");
+const {
+  getAssignedSchools,
+  submitInspection,
+  uploadMiddleware
+} = require("../controllers/inspectionController");
 
 // ✅ Custom middleware with detailed logging
 const auth = (req, res, next) => {
@@ -34,6 +38,6 @@ const auth = (req, res, next) => {
 
 // Routes
 router.get("/assigned-schools", auth, getAssignedSchools);
-router.post("/submit", auth, submitInspection);
+router.post("/submit", auth, uploadMiddleware, submitInspection);
 
 module.exports = router;

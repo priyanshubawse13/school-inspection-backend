@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },  
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -18,4 +19,5 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.15.2"
   }
+
 }
